@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "com.smushytaco.experience_remover.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "RemoveAnvilFunctionality",
+    "RemoveEnchantmentTableFunctionality",
+    "RemoveExperienceOrbs"
+  ],
+  "client": [
+    "client.HideExperienceBar",
+    "client.LowerStatusBars"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
