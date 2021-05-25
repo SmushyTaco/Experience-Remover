@@ -1,2 +1,4 @@
 # Experience Remover
-Mod information: https://www.curseforge.com/minecraft/mc-mods/experience-remover/
+CurseForge: https://www.curseforge.com/minecraft/mc-mods/experience-remover/
+
+Modrinth: https://modrinth.com/mod/experience-remover/
