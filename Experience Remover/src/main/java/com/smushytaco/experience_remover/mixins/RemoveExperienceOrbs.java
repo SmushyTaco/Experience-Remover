@@ -1,5 +1,6 @@
 package com.smushytaco.experience_remover.mixins;
 import com.smushytaco.experience_remover.ExperienceRemover;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.world.World;
@@ -13,12 +14,12 @@ public abstract class RemoveExperienceOrbs {
     private void hookFirstInit(World world, double x, double y, double z, int amount, CallbackInfo ci) {
         if (ExperienceRemover.INSTANCE.getConfig().getDisableMod()) return;
         ExperienceOrbEntity experienceOrbEntity = (ExperienceOrbEntity) (Object) this;
-        experienceOrbEntity.remove();
+        experienceOrbEntity.remove(Entity.RemovalReason.DISCARDED);
     }
     @Inject(method = "<init>(Lnet/minecraft/entity/EntityType;Lnet/minecraft/world/World;)V", at = @At("RETURN"))
     private void hookSecondInit(EntityType<? extends ExperienceOrbEntity> entityType, World world, CallbackInfo ci) {
         if (ExperienceRemover.INSTANCE.getConfig().getDisableMod()) return;
         ExperienceOrbEntity experienceOrbEntity = (ExperienceOrbEntity) (Object) this;
-        experienceOrbEntity.remove();
+        experienceOrbEntity.remove(Entity.RemovalReason.DISCARDED);
     }
 }
