@@ -19,7 +19,7 @@ public abstract class LowerStatusBars {
     @Inject(method = "renderStatusBars", at = @At("HEAD"))
     private void hookHeadRenderStatusBars(MatrixStack matrices, CallbackInfo ci) {
         if (ExperienceRemover.INSTANCE.getConfig().getDisableMod()) return;
-        scaledHeight = scaledHeight + 6;
+        scaledHeight = scaledHeight + 7;
     }
     @Inject(method = "renderStatusBars", at = @At("RETURN"))
     private void hookReturnRenderStatusBars(MatrixStack matrices, CallbackInfo ci) {
@@ -29,7 +29,7 @@ public abstract class LowerStatusBars {
     @Inject(method = "renderMountHealth", at = @At("HEAD"))
     private void hookHeadRenderMountHealth(MatrixStack matrices, CallbackInfo ci) {
         if (ExperienceRemover.INSTANCE.getConfig().getDisableMod()) return;
-        scaledHeight = scaledHeight + 6;
+        scaledHeight = scaledHeight + 7;
     }
     @Inject(method = "renderMountHealth", at = @At("RETURN"))
     private void hookReturnRenderMountHealth(MatrixStack matrices, CallbackInfo ci) {
