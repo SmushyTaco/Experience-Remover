@@ -8,8 +8,5 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class HideExperienceBar {
     @ModifyReturnValue(method = "hasExperienceBar", at = @At("RETURN"))
     @SuppressWarnings("unused")
-    private boolean hookHasExperienceBar(boolean original) {
-        if (ExperienceRemover.INSTANCE.getConfig().getDisableMod()) return original;
-        return false;
-    }
+    private boolean hookHasExperienceBar(boolean original) { return ExperienceRemover.INSTANCE.getConfig().getDisableMod() && original; }
 }
