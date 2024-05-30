@@ -10,7 +10,8 @@
   ],
   "client": [
     "client.HideExperienceBar",
-    "client.LowerStatusBars"
+    "client.LowerStatusBars",
+    "client.WindowAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

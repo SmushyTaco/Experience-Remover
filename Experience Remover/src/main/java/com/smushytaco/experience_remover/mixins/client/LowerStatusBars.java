@@ -11,29 +11,27 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(InGameHud.class)
 public abstract class LowerStatusBars {
-    @Shadow
-    private int scaledHeight;
     @Final
     @Shadow
     private MinecraftClient client;
     @Inject(method = "renderStatusBars", at = @At("HEAD"))
     private void hookHeadRenderStatusBars(DrawContext context, CallbackInfo ci) {
         if (ExperienceRemover.INSTANCE.getConfig().getDisableMod()) return;
-        scaledHeight = scaledHeight + 6;
+        ((WindowAccessor) (Object) client.getWindow()).setScaledHeight(context.getScaledWindowHeight() + 6);
     }
     @Inject(method = "renderStatusBars", at = @At("RETURN"))
     private void hookReturnRenderStatusBars(DrawContext context, CallbackInfo ci) {
         if (ExperienceRemover.INSTANCE.getConfig().getDisableMod()) return;
-        scaledHeight = client.getWindow().getScaledHeight();
+        ((WindowAccessor) (Object) client.getWindow()).setScaledHeight(context.getScaledWindowHeight() - 6);
     }
     @Inject(method = "renderMountHealth", at = @At("HEAD"))
     private void hookHeadRenderMountHealth(DrawContext context, CallbackInfo ci) {
         if (ExperienceRemover.INSTANCE.getConfig().getDisableMod()) return;
-        scaledHeight = scaledHeight + 6;
+        ((WindowAccessor) (Object) client.getWindow()).setScaledHeight(context.getScaledWindowHeight() + 6);
     }
     @Inject(method = "renderMountHealth", at = @At("RETURN"))
     private void hookReturnRenderMountHealth(DrawContext context, CallbackInfo ci) {
         if (ExperienceRemover.INSTANCE.getConfig().getDisableMod()) return;
-        scaledHeight = client.getWindow().getScaledHeight();
+        ((WindowAccessor) (Object) client.getWindow()).setScaledHeight(context.getScaledWindowHeight() - 6);
     }
 }

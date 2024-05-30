@@ -7,6 +7,5 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(ClientPlayerInteractionManager.class)
 public abstract class HideExperienceBar {
     @ModifyReturnValue(method = "hasExperienceBar", at = @At("RETURN"))
-    @SuppressWarnings("unused")
     private boolean hookHasExperienceBar(boolean original) { return ExperienceRemover.INSTANCE.getConfig().getDisableMod() && original; }
 }
