@@ -1,6 +1,6 @@
 {
-  "text.autoconfig.experience_remover.title": "Experience Remover Configuration",
-  "text.autoconfig.experience_remover.option.disableMod": "Disable Mod",
-  "text.autoconfig.experience_remover.option.allowAnvilUse": "Allow Anvil Use",
-  "text.autoconfig.experience_remover.option.allowEnchantmentTableUse": "Allow Enchantment Table Use"
+  "text.config.experience_remover.title": "Experience Remover Configuration",
+  "text.config.experience_remover.option.disableMod": "Disable Mod",
+  "text.config.experience_remover.option.allowAnvilUse": "Allow Anvil Use",
+  "text.config.experience_remover.option.allowEnchantmentTableUse": "Allow Enchantment Table Use"
 }
