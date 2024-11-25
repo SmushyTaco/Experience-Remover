@@ -21,9 +21,6 @@
         "adapter": "kotlin",
         "value": "com.smushytaco.experience_remover.ExperienceRemover"
       }
-    ],
-    "modmenu": [
-      "com.smushytaco.experience_remover.configuration_support.ModMenuIntegration"
     ]
   },
   "mixins": [
