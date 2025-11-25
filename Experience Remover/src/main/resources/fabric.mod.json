@@ -12,7 +12,7 @@
     "issues": "https://www.curseforge.com/minecraft/mc-mods/experience_remover/issues/",
     "sources": "https://github.com/SmushyTaco/Experience-Remover/"
   },
-  "license": "GNU Lesser General Public License version 3 (LGPLv3)",
+  "license": "Apache-2.0",
   "icon": "assets/experience_remover/icon.png",
   "environment": "*",
   "entrypoints": {
