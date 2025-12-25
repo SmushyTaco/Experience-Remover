@@ -22,6 +22,7 @@ repositories {
     maven("https://maven.wispforest.io")
     maven("https://maven.kosmx.dev/")
 }
+loom { accessWidenerPath = file("src/main/resources/experience_remover.classtweaker") }
 dependencies {
     minecraft(libs.minecraft)
     mappings(loom.officialMojangMappings())
