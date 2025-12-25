@@ -33,5 +33,6 @@
     "minecraft": ">=${minecraft}",
     "java": ">=${java}",
     "owo": ">=${owo_version}"
-  }
+  },
+  "accessWidener" : "experience_remover.classtweaker"
 }

@@ -18,6 +18,9 @@ val javaVersion = libs.versions.java.map { it.toInt() }
 base.archivesName = archivesBaseName
 version = modVersion.get()
 group = mavenGroup.get()
+loom {
+    accessWidenerPath = file("src/main/resources/experience_remover.classtweaker")
+}
 repositories {
     maven("https://maven.wispforest.io")
     maven("https://maven.kosmx.dev/")
