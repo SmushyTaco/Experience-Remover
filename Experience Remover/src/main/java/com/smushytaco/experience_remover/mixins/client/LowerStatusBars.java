@@ -9,11 +9,11 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class LowerStatusBars {
     @Shadow
     protected abstract Gui.ContextualInfo nextContextualInfoState();
-    @ModifyExpressionValue(method = "renderPlayerHealth", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;guiHeight()I"))
+    @ModifyExpressionValue(method = "extractPlayerHealth", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;guiHeight()I"))
     private int shiftPlayerHealthDown(int original) {
         return ExperienceRemover.INSTANCE.getConfig().getDisableMod() || nextContextualInfoState() != Gui.ContextualInfo.EMPTY ? original : original + 6;
     }
-    @ModifyExpressionValue(method = "renderVehicleHealth", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;guiHeight()I"))
+    @ModifyExpressionValue(method = "extractVehicleHealth", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;guiHeight()I"))
     private int shiftVehicleHealthDown(int original) {
         return ExperienceRemover.INSTANCE.getConfig().getDisableMod() || nextContextualInfoState() != Gui.ContextualInfo.EMPTY ? original : original + 6;
     }

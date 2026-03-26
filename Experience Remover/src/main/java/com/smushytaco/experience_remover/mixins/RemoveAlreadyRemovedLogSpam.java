@@ -9,6 +9,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 @Mixin(ServerLevel.class)
 public abstract class RemoveAlreadyRemovedLogSpam {
-    @WrapWithCondition(method = "addEntity", at = @At(value = "INVOKE", target = "Lorg/slf4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;)V", remap = false))
+    @WrapWithCondition(method = "addEntity", at = @At(value = "INVOKE", target = "Lorg/slf4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;)V"))
     private boolean hookOnUse(Logger instance, String var1, Object var2, Entity entity) { return ExperienceRemover.INSTANCE.getConfig().getDisableMod() || !(entity instanceof ExperienceOrb); }
 }
